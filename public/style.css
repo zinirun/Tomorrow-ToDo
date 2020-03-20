@@ -1,0 +1,216 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap');
+
+body {
+    text-align: center;
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: 600;
+}
+
+.add {
+    cursor: pointer;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-right: 10px;
+    display: inline-block;
+    text-align: center;
+    color: #222;
+    width: 150px;
+    background-color: #fff;
+    border-bottom: 2px solid #65c4f6;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 1.5rem;
+}
+
+.wrap_menu {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.menu {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 21px;
+    font-weight: 600;
+    text-align: center;
+    margin: 3px 3px;
+    display: block;
+    color: #222;
+    width: 250px;
+    border-bottom: 2px solid #666;
+    padding: 0.5rem 1.5rem;
+}
+
+#add_todo {
+    display: none;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: left;
+    color: #444444;
+    width: 500px;
+    height: auto;
+    background-color: #f6f6f6;
+    box-shadow: 2px 3px rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    padding: 1.5rem 1.5rem;
+    border-radius: 10px;
+}
+
+#hide {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 550px;
+    height: 600px;
+    overflow: hidden;
+    margin-top: -300px;
+    margin-left: -275px;
+}
+
+.addtodo_buttonlist {
+    margin-top: 30px;
+    display: block;
+    text-align: right;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"]{
+    font-size: 16px;
+    font-family: inherit;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    width: 100px;
+    background-color: rgb(50, 162, 210);
+    border-style: none;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 1rem;
+    margin-left: 5px;
+}
+
+
+input[type="text"],
+input[type="password"]{
+    width: 480px;
+    height: auto;
+    line-height: normal;
+    padding: 0.7em .5em;
+    font-family: inherit;
+    font-size: 19px;
+    font-weight: 600;
+    border: 1px solid #999;
+    border-style: none;
+    margin-top: 5px;
+}
+
+.rank {
+    font-size: 18px;
+}
+
+.div_mytodo {
+    display: block;
+    font-size: 19px;
+    font-weight: 600;
+    color: black;
+    width: 266px;
+    height: 60px;
+    background-color: #bcddef;
+    padding: 1rem;
+    margin: 9px 3px;
+    text-align: left;
+}
+
+.sec_wrapper {
+    display: inline-block;
+}
+
+table{
+    z-index: 2;
+    color: black;
+    width: 300px;
+    height: 60px;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 1px;
+    border-spacing: 0px 0px;
+}
+
+.t_title{
+    font-family: 'Nanum Myeongjo', serif;
+    background-color: #eaeaea;
+    font-size: 20px;
+    font-weight: 800;
+    padding: 1rem 1rem 0.7rem;
+}
+
+.t_detail{
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #f2f2f2;
+    color: #555;
+    padding: 0.5rem 0 0.5rem 1rem;
+    border-bottom: 10px solid white;
+}
+
+.t_pass{
+    cursor: pointer;
+    width: 40px;
+    background-color: #f2f2f2;
+    color: #808080;
+    font-size: 19px;
+    font-weight: 500;
+    text-align: center;
+    border-bottom: 10px solid white;
+}
+
+.t_del{
+    cursor: pointer;
+    width: 40px;
+    font-size: 19px;
+    background-color: #f2f2f2;
+    color: #a33937;
+    font-weight: 900;
+    text-align: center;
+    border-bottom: 10px solid white;
+}
+
+/*for login.html*/
+
+.login_wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 550px;
+    height: 600px;
+    overflow: hidden;
+    margin-top: -300px;
+    margin-left: -275px;
+}
+
+.login_logo{
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.login_sec {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    margin: 3px 3px;
+    display: block;
+    color: #222;
+    width: 350px;
+    background-color: #eee;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    padding: 2rem 2rem;
+}
+
+.login_info{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}

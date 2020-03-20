@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo</title>
+    <script src="/public/module.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="/public/style.css">
+</head>
+
+<body>
+    <div class="add" onclick="addTodo()"><span>일 추가하기</span></div>
+    <div class="add" onclick="delete_all()" style="
+    border-bottom: 2px solid #f1b5ea;"><span>전체 초기화</span></div>
+    <div class="add" onclick="logout()" style="
+    border-bottom: 2px solid #f1b5ea;"><span>로그아웃</span></div>
+    <div class="wrap_menu">
+        <div class="sec_wrapper" id="todo_wrapper">
+            <div class="menu" id="m_todo"><span>할 일</span></div>
+            <table>
+                <% todoList.forEach(function(item, index){ %>
+                <tr>
+                    <td class="t_title" colspan="2"><%= item.title %></td>
+                </tr>
+                <tr>
+                    <td class="t_detail">작성 <%= item.day %>, <%= item.who %>, <%= item.rank %>순위</td>
+                    <td class="t_pass" onclick="location.href = '/process/changestat?stat=<%= item.status %>&id=<%= item.id %>'">
+                        →
+                    </td>
+                </tr>
+                <% }); %>
+            </table>
+        </div>
+        <div class="sec_wrapper" id="doing_wrapper">
+            <div class="menu" id="m_doing"><span>하고 있는 일</span></div>
+            <table>
+                <% doingList.forEach(function(item, index){ %>
+                <tr>
+                    <td class="t_title" colspan="2"><%= item.title %></td>
+                </tr>
+                <tr>
+                    <td class="t_detail">작성 <%= item.day %>, <%= item.who %>, <%= item.rank %>순위</td>
+                    <td class="t_pass" onclick="location.href = '/process/changestat?stat=<%= item.status %>&id=<%= item.id %>'">
+                        →
+                    </td>
+                </tr>
+                <% }); %>
+            </table>
+        </div>
+        <div class="sec_wrapper" id="done_wrapper">
+            <div class="menu" id="m_done"><span>한 일</span></div>
+            <table>
+                <% doneList.forEach(function(item, index){ %>
+                <tr>
+                    <td class="t_title" colspan="2"><%= item.title %></td>
+                </tr>
+                <tr>
+                    <td class="t_detail">작성 <%= item.day %>, <%= item.who %>, <%= item.rank %>순위</td>
+                    <td class="t_del" onclick="location.href = '/process/deltodo/<%= item.id %>'">
+                        ×
+                    </td>
+                </tr>
+                <% }); %>
+            </table>
+        </div>
+
+    </div>
+
+    <div id="hide">
+        <div id="add_todo">
+            <h2 style="text-align: center; color:black;">할일 등록</h2>
+            <hr style="border:1px solid lightgrey;">
+            <form name="addform" method="post" action="/process/addtodo">
+                <p class="addText">어떤 일인가요?</p>
+                <input type="text" name="title" placeholder="Java 공부하기 (24자까지)" maxlength='24' required /><br>
+                <p class="addText">누가 할 일인가요?</p>
+                <input type="text" name="who" placeholder="지니 (10자까지)" maxlength='10' required /><br>
+                <p class="addText">우선순위를 선택하세요.</p>
+                <div class="rank">
+                    <label><input type="radio" name="rank" value="1" checked="checked">1순위</label>
+                    <label><input type="radio" name="rank" value="2">2순위</label>
+                    <label><input type="radio" name="rank" value="3">3순위</label>
+                </div>
+                <div class="addtodo_buttonlist">
+                    <input type="button" value="닫기" name="" style="background: #ea8d8a; cursor: pointer;" onclick="hide_addTodo()" onmouseover="this.style.textDecoration= 'underline';" onmouseout="this.style.textDecoration='none';">
+                    <input type="reset" value="지우기" name="" style="background: #efb64b; cursor: pointer;" onmouseover="this.style.textDecoration= 'underline';" onmouseout="this.style.textDecoration='none';">
+                    <input type="submit" value="등록" name="" style="background: rgb(50, 162, 210); cursor: pointer;" onclick="hide_addTodo()" onmouseover="this.style.textDecoration= 'underline';" onmouseout="this.style.textDecoration='none';">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <link rel="stylesheet" type="text/css" href="/public/style.css">
+</head>
+
+<body onload = "document.regform.<%= focus %>.focus();">
+    <div class="login_wrap">
+        <div class="sec_wrapper">
+            <div class="login_sec">
+                <div class="login_logo">회원가입</div>
+                <hr style="width: 170px; border: 1px solid #bbb;">
+                <div class="login_info">내일 할 일을 선택해주셔서 감사합니다.<br><p style="color:red"><%= reginfo %></p></div>
+
+                <form name="regform" method="post" action="/process/register">
+                    
+                    <input type="text" name="username" placeholder="이름(2자~20자)" maxlength='20' style="width: 310px" value="<%= username %>" required /><br>
+                    
+                    <input type="text" name="userid" placeholder="아이디(4자~20자)" maxlength='20' style="width: 310px" value="<%= userid %>" required /><br>
+                    
+                    <!--보안상 비밀번호 자동완성 X-->
+                    <input type="password" name="userpw" placeholder="비밀번호(4자~20자)" maxlength='20' style="width: 310px" value="" required /><br>
+                    
+                    <input type="password" name="userpw_check" placeholder="비밀번호 확인" maxlength='20' style="width: 310px" value="" required /><br>
+                    
+                    <input type="text" name="regroute" placeholder="가입 경로가 있나요? (선택)" maxlength='40' value="<%= regroute %>" style="width: 310px"><br>
+                    
+                    <div class="addtodo_buttonlist">
+                        <input type="button" value="로그인" name="" style="background: #ea8d8a; cursor: pointer;" onclick="location.href = '/';" onmouseover="this.style.textDecoration= 'underline';" onmouseout="this.style.textDecoration='none';">
+                        <input type="submit" value="회원가입" name="" style="background: rgb(50, 162, 210); cursor: pointer; margin-right: 70px;" onmouseover="this.style.textDecoration= 'underline';" onmouseout="this.style.textDecoration='none';">
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
